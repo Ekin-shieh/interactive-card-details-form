@@ -1,0 +1,27 @@
+.card-front {
+    width: 400px;
+    height: 220px;
+    border-radius: 10px;
+    background-image: url('/images/bg-card-front.png');
+    background-size: cover;
+    color: hsl(0, 100%, 100%);
+
+    img{
+        margin: 3% 0 8% 3%;
+        height: 20%;
+    }
+
+    .card-num {
+        text-align: center;
+        font-size: 1.6em;
+        letter-spacing: 0.1em;
+        line-height: 0;
+    }
+
+    .bottom-info {
+        padding: 0 8% 0 8%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8em;
+    }
+}
