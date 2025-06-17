@@ -6,16 +6,8 @@ body {
     letter-spacing: 0.1em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
   body {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 500;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  body {
-    font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
   }
 }

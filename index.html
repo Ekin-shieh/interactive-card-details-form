@@ -6,6 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="stylesheet" href="/style/bg-card.css">
   <link rel="stylesheet" href="/style/body.css">
+  <link rel="stylesheet" href="/style/form.css">
   <title>Frontend Mentor | Interactive card details form</title>
 </head>
 <body>
@@ -21,5 +22,23 @@
     <img src="/images/bg-card-back.png">
     <div class="back-num">000</div>
   </div>
+  <form>
+    <label> 
+      <div>CARDHOLDER NAME</div>
+      <input type="text" placeholder="e.g. Jane Appleseed">
+    </label>
+    <label>
+      <div>CARD NUMBER</div>
+      <input type="number" placeholder="e.g. 1234 5678 9123 0000">
+    </label>
+    <div class="short-input">
+      <div class="header">EXP. DATE(XX/YY)</div>
+      <div class="header">CVC</div>
+      <input placeholder="MM">
+      <input placeholder="YY">
+      <input class="cvc" placeholder="e.g. 123">
+    </div>
+    <button>Confirm</button>
+  </form>
 </body>
 </html>
