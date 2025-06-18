@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/style/body.css">
   <link rel="stylesheet" href="/style/form.css">
   <link rel="stylesheet" href="/style/success.css">
+  <link rel="stylesheet" href="/style/error.css">
   <title>Interactive card details form</title>
 </head>
 <body>
@@ -40,7 +41,11 @@
       <input placeholder="YY" id="exp-year">
       <input class="cvc" placeholder="e.g. 123" id="cvc-num">
     </div>
-    <button type="submit">Confirm</button>
+    <button id="submit-button" type="submit">Confirm</button>
+    <div id="name-error"></div>
+    <div id="cardnum-error"></div>
+    <div id="date-error"></div>
+    <div id="cvc-error"></div>
   </form>
   <div class="hidden" id="success-message">
     <img src="/images/icon-complete.svg">
