@@ -112,5 +112,14 @@ document.addEventListener('DOMContentLoaded', function () {
         cvcNumValue = '000';
         month = '00';
         year = '00';
+
+        const element = document.getElementById('success-message');
+        const current = window.getComputedStyle(element).display;
+
+        if (current === "none") {
+            element.style.display = "flex";
+        } else {
+            element.style.display = "none";
+        }
     });
 });
