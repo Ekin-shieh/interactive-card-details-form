@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let userNameValue = 'JANE APPLESEED';
     let cardNumValue = '0000 0000 0000 0000';
-    let expValue = '00/00';
     let cvcNumValue = '000';
     let month = '00';
     let year = '00';
@@ -26,8 +25,15 @@ document.addEventListener('DOMContentLoaded', function () {
         cvcNum:''
     };
 
+    userName.addEventListener('input', function () {
+        let raw = userName.value.replace(/[^\p{L} ]/gu, '');
+        if (raw.length > 50) {raw = raw.slice(0, 16);}
+        const formatted = raw.trim();
+        userName.value = formatted;
+        formData.userName = formatted;
+    });
+
     userName.addEventListener('blur', function () {
-        formData.userName = userName.value.trim();
         if (formData.userName === '') {
             userNameValue = 'JANE APPLESEED';
         } else {
@@ -36,8 +42,16 @@ document.addEventListener('DOMContentLoaded', function () {
         userNameDisplay.textContent = userNameValue;
     });
 
+    cardNum.addEventListener('input', function () {
+        let raw = cardNum.value.toUpperCase().replace(/\s+/g, '');
+        raw = raw.replace(/[^A-Z0-9]/g, '');
+        if (raw.length > 16) {raw = raw.slice(0, 16);}
+        const formatted = raw.replace(/(.{4})/g, '$1 ').trim();
+        cardNum.value = formatted;
+        formData.cardNum = formatted;
+    });
+
     cardNum.addEventListener('blur', function () {
-        formData.cardNum = cardNum.value.trim();
         if (formData.cardNum === '') {
             cardNumValue = '0000 0000 0000 0000';
         } else {
@@ -46,8 +60,15 @@ document.addEventListener('DOMContentLoaded', function () {
         cardNumDisplay.textContent = cardNumValue;
     });
 
+    expMonth.addEventListener('input', function () {
+        let raw = expMonth.value.replace(/[^0-9]/g, '');
+        if (raw.length > 2) {raw = raw.slice(0, 2);}
+        const formatted = raw.trim();
+        expMonth.value = formatted;
+        formData.expMonth = formatted;
+    });
+
     expMonth.addEventListener('blur', function () {
-        formData.expMonth = expMonth.value.trim();
         if (formData.expMonth === '') {
             month = '00';
         } else {
@@ -56,14 +77,29 @@ document.addEventListener('DOMContentLoaded', function () {
         expDisplay.textContent = month + cap + year;
     });
 
+    expYear.addEventListener('input', function () {
+        let raw = expYear.value.replace(/[^0-9]/g, '');
+        if (raw.length > 2) {raw = raw.slice(0, 2);}
+        const formatted = raw.trim();
+        expYear.value = formatted;
+        formData.expYear = formatted;
+    });
+
     expYear.addEventListener('blur', function () {
-        formData.expYear = expYear.value.trim();
         if (formData.expYear === '') {
             year = '00';
         } else {
             year = formData.expYear;
         }
         expDisplay.textContent = month + cap + year;
+    });
+
+    cvcNum.addEventListener('input', function () {
+        let raw = cvcNum.value.replace(/[^0-9]/g, '');
+        if (raw.length > 3) {raw = raw.slice(0, 3);}
+        const formatted = raw.trim();
+        cvcNum.value = formatted;
+        formData.cvcNum = formatted;
     });
 
     cvcNum.addEventListener('blur', function () {
@@ -91,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         expYear.value = '';
         cvcNum.value = '';
         userNameDisplay.textContent = 'JANE APPLESEED';
-        cardNumDisplay.textContent = '0000 0000 0000';
+        cardNumDisplay.textContent = '0000 0000 0000 0000';
         expDisplay.textContent = '00/00';
         cvcNumDisplay.textContent = '000';
         formData.userName = '';
