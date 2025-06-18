@@ -26,10 +26,21 @@ form {
         margin: 10px 0 20px 0;
         padding: 0 10px;
         box-sizing: border-box;
+        box-shadow: none;
+        outline: none;
     }
 
-    input::placeholder {
-        color: hsl(270, 3%, 87%)
+    input:focus:not(.error) {
+        border-color: hsl(278, 94%, 30%);
+        outline: none;
+    }
+
+    input.error {
+        border-color: red;
+    }
+
+    input:focus {
+        border-color: white;
     }
 
     button {

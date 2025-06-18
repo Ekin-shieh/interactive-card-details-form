@@ -27,19 +27,27 @@ document.addEventListener('DOMContentLoaded', function () {
         cvcNum: ''
     };
 
-    function showError(id, msg) {
-        const el = document.getElementById(id + '-error');
+    function showError(msgId, msg, inputId = msgId === 'name' ? 'username' : msgId) {
+        const el = document.getElementById(msgId + '-error');
+        const input = document.getElementById(inputId);
         if (el) {
             el.textContent = msg;
             el.style.display = 'block';
         }
+        if (input) {
+            input.classList.add('error');
+        }
     }
 
-    function clearError(id) {
-        const el = document.getElementById(id + '-error');
+    function clearError(msgId, inputId = msgId === 'name' ? 'username' : msgId) {
+        const el = document.getElementById(msgId + '-error');
+        const input = document.getElementById(inputId);
         if (el) {
             el.textContent = '';
             el.style.display = 'none';
+        }
+        if (input) {
+            input.classList.remove('error');
         }
     }
 
@@ -127,20 +135,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (!/^\d{3}$/.test(rawCVC)) {
-            showError('cvc', 'CVC must be 3 digits');
+            showError('cvc', 'CVC must be 3 digits', 'cvc-num');
             valid = false;
         }
 
         const currentYear = new Date().getFullYear() % 100;
         const yearNum = parseInt(rawYear, 10);
         if (isNaN(yearNum) || yearNum < currentYear) {
-            showError('date', `Year should after ${currentYear}`);
+            showError('date', `Year should after ${currentYear}`, 'exp-year');
             valid = false;
         }
 
         const monthNum = parseInt(rawMonth, 10);
         if (isNaN(monthNum) || monthNum < 1 || monthNum > 12) {
-            showError('date', 'Invalid Month');
+            showError('date', 'Invalid Month', 'exp-month');
             valid = false;
         } else {
             rawMonth = monthNum < 10 ? '0' + monthNum : '' + monthNum;
