@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         userName.value = formatted;
         formData.userName = formatted;
         clearError('name');
+        userName.classList.remove('error');
     });
 
     userName.addEventListener('blur', function () {
@@ -74,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.cardNumRaw = raw;
         formData.cardNumFormatted = formatted;
         clearError('cardnum');
+        cardNum.classList.remove('error');
     });
 
     cardNum.addEventListener('blur', function () {
@@ -87,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         expMonth.value = raw;
         formData.expMonth = raw;
         clearError('date');
+        expMonth.classList.remove('error');
     });
 
     expMonth.addEventListener('blur', function () {
@@ -100,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
         expYear.value = raw;
         formData.expYear = raw;
         clearError('date');
+        expYear.classList.remove('error');
     });
 
     expYear.addEventListener('blur', function () {
@@ -113,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cvcNum.value = raw;
         formData.cvcNum = raw;
         clearError('cvc');
+        cvcNum.classList.remove('error');
     });
 
     cvcNum.addEventListener('blur', function () {
