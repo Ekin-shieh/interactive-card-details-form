@@ -7,39 +7,40 @@
   <link rel="stylesheet" href="/style/bg-card.css">
   <link rel="stylesheet" href="/style/body.css">
   <link rel="stylesheet" href="/style/form.css">
-  <title>Frontend Mentor | Interactive card details form</title>
+  <title>Interactive card details form</title>
 </head>
 <body>
   <div  class="gradient-box"></div>
   <div class="card-front">
     <img src="/images/card-logo.svg">
-    <div class="card-num">0000 0000 0000 0000</div>
+    <div class="card-num" id="cardnum-display">0000 0000 0000 0000</div>
     <div class="bottom-info">
-      <div>JANE APPLESEED</div>
-      <div>00/00</div>
+      <div id="username-display">JANE APPLESEED</div>
+      <div id="exp-display">00/00</div>
     </div>
   </div>
     <div class="card-back">
     <img src="/images/bg-card-back.png">
-    <div class="back-num">000</div>
+    <div class="back-num" id="cvc-num-display">000</div>
   </div>
-  <form>
+  <form id="card-info">
     <label> 
       <div>CARDHOLDER NAME</div>
-      <input type="text" placeholder="e.g. Jane Appleseed">
+      <input type="text" placeholder="e.g. Jane Appleseed" id="username">
     </label>
     <label>
       <div>CARD NUMBER</div>
-      <input type="text" placeholder="e.g. 1234 5678 9123 0000">
+      <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="cardnum">
     </label>
     <div class="short-input">
       <div class="header">EXP. DATE(XX/YY)</div>
       <div class="header">CVC</div>
-      <input placeholder="MM">
-      <input placeholder="YY">
-      <input class="cvc" placeholder="e.g. 123">
+      <input placeholder="MM" id="exp-month">
+      <input placeholder="YY" id="exp-year">
+      <input class="cvc" placeholder="e.g. 123" id="cvc-num">
     </div>
-    <button>Confirm</button>
+    <button type="submit">Confirm</button>
   </form>
+  <script src="/script/form.js"></script>
 </body>
 </html>

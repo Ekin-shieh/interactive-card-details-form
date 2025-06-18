@@ -4,6 +4,7 @@ form {
     width: 375px;
     height: 350px;
     padding: 25px;
+    box-sizing: border-box;
 
     label {
         width: 100%;
@@ -37,6 +38,14 @@ form {
         background-color: black;
         color:hsl(0, 100%, 100%);
         margin-top: 20px;
+    }
+
+    button:hover {
+        background-color: hsl(278, 94%, 30%);
+    }
+
+    button:active {
+        background-color: hsl(249, 99%, 64%);
     }
 
     .short-input {

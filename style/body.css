@@ -44,31 +44,17 @@ body {
 @media screen and (max-width: 375px) {
 
   body {
-    position: relative;
-    margin: 0;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    min-height: 100vh;
     width:375px;
 
     .gradient-box {
-      position: absolute;
-      top: 0;
-      left: 0;
       z-index: -2;
       width: 100%;
       height: 240px;
-      background: linear-gradient(135deg,
-        black 0%,
-        hsl(278, 94%, 30%) 50%,
-        black 100%);
     }
 
     .card-front {
       width: 285px;
       height: 160px;
-      position: absolute;
       top: 125px;
       left: 15px;
 
@@ -85,14 +71,12 @@ body {
       width: 285px;
       height: 160px;
       z-index: -1;
-      position: absolute;
       top: 30px;
       left: 75px;
       font-size: 0.5em;
     }
 
     form {
-      position: absolute;
       top: 300px;
       left: 0;
     }
