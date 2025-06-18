@@ -47,6 +47,7 @@ Users should be able to:
 -CSS Flexbox and Grid – For layout arrangement.
 -Custom Validation – Implemented manually in JavaScript instead of using HTML pattern or required.
 -Dynamic DOM Updates – JavaScript updates the visual card in real time based on user input.
+-Eslint - Check Find formatting issues, potential errors, and non-compliance in the code.
 
 ### What I learned
 
