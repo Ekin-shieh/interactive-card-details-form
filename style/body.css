@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
 body {
-  position: relative;
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 500;
   letter-spacing: 0.1em;
   min-height: 100vh;
-  width:1440px;
+  height: auto;
+  min-width:1440px;
+  width: auto;
 
   .gradient-box {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
-    width: 435px;
+    width: 30%;
     height: 100%;
     background: linear-gradient(135deg,
       black 0%,
@@ -23,34 +24,35 @@ body {
   }
 
   .card-front {
-    position: absolute;
+    position: fixed;
     top: 170px;
-    left: 150px;
+    left: 10%;
   }
 
   .card-back {
-    position: absolute;
+    position: fixed;
     top: 420px;
-    left: 230px;
+    left: 15%;
   }
 
   form {
-    position: absolute;
+    position: fixed;
     top: 210px;
-    left: 735px;
+    left: 50%;
   }
 
   #success-message {
-    position: absolute;
+    position: fixed;
     top: 210px;
-    left: 735px;
+    left: 50%;
   }
 }
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 1000px) {
 
   body {
-    width:375px;
+    min-width: 375px;
+    width: auto;
 
     .gradient-box {
       z-index: -2;
@@ -62,7 +64,7 @@ body {
       width: 285px;
       height: 160px;
       top: 125px;
-      left: 15px;
+      left: calc(50vw - 160px);
 
       .card-num {
           font-size: 1.2em;
@@ -78,20 +80,18 @@ body {
       height: 160px;
       z-index: -1;
       top: 30px;
-      left: 75px;
+      left: calc(50vw - 110px);
       font-size: 0.5em;
     }
 
     form {
       top: 300px;
-      left: 0;
+      left: calc(50vw - 185px);
     }
 
     #success-message {
       top: 300px;
-      left: 0;
+      left: calc(50vw - 185px);
     }
-
-
   }
 }
