@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const input = document.getElementById(inputId);
         if (el) {
             el.textContent = msg;
-            el.style.display = 'block';
+            el.style.visibility = 'visible';
         }
         if (input) {
             input.classList.add('error');
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const input = document.getElementById(inputId);
         if (el) {
             el.textContent = '';
-            el.style.display = 'none';
+            el.style.visibility = 'hidden';
         }
         if (input) {
             input.classList.remove('error');

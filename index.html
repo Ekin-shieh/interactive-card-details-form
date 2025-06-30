@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="./style/bg-card.css">
   <link rel="stylesheet" href="./style/body.css">
   <link rel="stylesheet" href="./style/form.css">
-  <link rel="stylesheet" href="./style/success.css">
-  <link rel="stylesheet" href="./style/error.css">
   <title>Interactive card details form</title>
 </head>
 <body>
@@ -26,26 +24,20 @@
     <div class="back-num" id="cvc-num-display">000</div>
   </div>
   <form id="card-info">
-    <label> 
-      <div>CARDHOLDER NAME</div>
-      <input type="text" placeholder="e.g. Jane Appleseed" id="username">
-    </label>
-    <label>
-      <div>CARD NUMBER</div>
-      <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="cardnum">
-    </label>
-    <div class="short-input">
-      <div class="header">EXP. DATE(XX/YY)</div>
-      <div class="header">CVC</div>
-      <input placeholder="MM" id="exp-month">
-      <input placeholder="YY" id="exp-year">
-      <input class="cvc" placeholder="e.g. 123" id="cvc-num">
-    </div>
-    <button id="submit-button" type="submit">Confirm</button>
+    <div class="label">CARDHOLDER NAME</div>
+    <input type="text" placeholder="e.g. Jane Appleseed" id="username">
     <div id="name-error"></div>
+    <div class="label">CARD NUMBER</div>
+    <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="cardnum">
     <div id="cardnum-error"></div>
+    <div class="label header">EXP. DATE(XX/YY)</div>
+    <div class="label header">CVC</div>
+    <input placeholder="MM" id="exp-month">
+    <input placeholder="YY" id="exp-year">
+    <input placeholder="e.g. 123" id="cvc-num">
     <div id="date-error"></div>
     <div id="cvc-error"></div>
+    <button id="submit-button" type="submit">Confirm</button>
   </form>
   <div class="hidden" id="success-message">
     <img src="./images/icon-complete.svg">
