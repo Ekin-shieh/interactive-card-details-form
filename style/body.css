@@ -47,7 +47,7 @@ body {
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 428px) {
 
   body {
     width:375px;
